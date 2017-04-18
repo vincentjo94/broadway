@@ -7,7 +7,7 @@ class ReviewsController < ApplicationController
 
 	def create
 		@review = Review.new(params.require(:review).permit(:rating, :comment))
-		@eview.play_id = @play.id
+		@review.play_id = @play.id
 		@review.user_id = current_user.id
 
 		if @review.save
